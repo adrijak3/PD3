@@ -4,21 +4,36 @@
 #include <iomanip>
 using namespace std;
 struct patiekalas {};
-void skaitymas {};
-
+void skaitymas (int&n, int A[]);
+void spausdinimas (int n, int A[]);
 int main ()
 
+int n, A[100];
+double kaina;
+string patiekalas;
+cout << "Sveiki atvykę į restoraną „programavimas“" << endl;
 
 
 
-
-
-
-
-
-
-
-return o;
+return 0;
 }
 
-void skaitymas {}
+void skaitymas (int&n, int A[])
+{
+    ifstream fd ("meniu.txt");
+    for (int i = 1; i < n; i++)
+    {
+        fd >> A[i] >> endl;
+    }
+    fd.close();
+}
+
+void spausdinimas (int n, int A[])
+{
+    ofstream fr ("kvitas.txt");
+    for (int i = 1; i < n; i++)
+    {
+       fr << fixed << setprecision(2) << A[i] << endl;
+    }
+    fr.close();
+}
